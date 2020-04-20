@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>enseignant works!</p>
+<p>
+    recupdata works! {{valueRetour | json}}
+</p>
+<br>
+<table>
+    <tr>
+        <td>Nom</td>
+        <td>Prénom</td>
+    </tr>
+
+    <tr *ngFor="let enseignant of valueRetour">
+        <td>{{ enseignant.nom }}</td>
+        <td>{{ enseignant.prenom }}</td>
+    </tr>
+</table>
