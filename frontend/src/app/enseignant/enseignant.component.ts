@@ -19,7 +19,7 @@ export class EnseignantComponent{
 
   doGET(){
     console.log("GET");
-    let url = `http://51.38.191.75/api/enseignant/liste`;
+    let url = `http://51.38.191.75:80/api/enseignant/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
