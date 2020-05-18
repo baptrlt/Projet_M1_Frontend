@@ -1,0 +1,14 @@
+<h1>Enseignements</h1>
+
+<br>
+<table>
+    <tr>
+        <td>Libelle</td>
+        <td>Nomenclature</td>
+    </tr>
+
+    <tr *ngFor="let enseignement of valueRetour">
+        <td>{{ enseignement.libelle }}</td>
+        <td>{{ enseignement.nomenclature }}</td>
+    </tr>
+</table>

@@ -1,0 +1,14 @@
+<h1>Cours</h1>
+
+<br>
+<table>
+    <tr>
+        <td>Libelle</td>
+        <td>Nomenclature</td>
+    </tr>
+
+    <tr *ngFor="let cour of valueRetour">
+        <td>{{ cour.libelle }}</td>
+        <td>{{ cour.nomenclature }}</td>
+    </tr>
+</table>

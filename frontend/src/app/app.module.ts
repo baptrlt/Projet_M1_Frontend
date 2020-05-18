@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EnseignantComponent } from './enseignant/enseignant.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CoursComponent } from './cours/cours.component';
+import { EnseignementComponent } from './enseignement/enseignement.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    EnseignantComponent
+    EnseignantComponent,
+    CoursComponent,
+    EnseignementComponent
   ],
   imports: [
     BrowserModule,
