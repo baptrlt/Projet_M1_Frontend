@@ -10,6 +10,7 @@ import { CoursComponent } from './cours/cours.component';
 import { EnseignementComponent } from './enseignement/enseignement.component';
 import { SavoirComponent } from './savoir/savoir.component';
 import { CycleComponent } from './cycle/cycle.component';
+import { SyllabusComponent } from './syllabus/syllabus.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CycleComponent } from './cycle/cycle.component';
     CoursComponent,
     EnseignementComponent,
     SavoirComponent,
-    CycleComponent
+    CycleComponent,
+    SyllabusComponent
   ],
   imports: [
     BrowserModule,
