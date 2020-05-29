@@ -8,6 +8,7 @@ import { EnseignantComponent } from './enseignant/enseignant.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoursComponent } from './cours/cours.component';
 import { EnseignementComponent } from './enseignement/enseignement.component';
+import { CoursDetailComponent } from './cours-detail/cours-detail.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EnseignementComponent } from './enseignement/enseignement.component';
     NavbarComponent,
     EnseignantComponent,
     CoursComponent,
-    EnseignementComponent
+    EnseignementComponent,
+    CoursDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Cours} from '../cours/cours';
 
 @Component({
   selector: 'app-cours',
@@ -11,6 +12,7 @@ export class CoursComponent {
 
   constructor(private http: HttpClient) { }
   valueRetour: any;
+  selectedCours: Cours;
 
   ngAfterViewInit(): void {
     this.doGET();
@@ -32,6 +34,10 @@ export class CoursComponent {
         }
       );
 
+  }
+
+  onSelect(cour: Cours): void {
+    this.selectedCours = cour;
   }
 }
 

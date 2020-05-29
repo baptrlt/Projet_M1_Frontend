@@ -6,9 +6,27 @@
         <td>Libelle</td>
         <td>Nomenclature</td>
     </tr>
-
-    <tr *ngFor="let cour of valueRetour">
-        <td>{{ cour.libelle }}</td>
-        <td>{{ cour.nomenclature }}</td>
-    </tr>
 </table>
+
+   <li *ngFor="let cour of valueRetour" (click)="onSelect(cour)">
+        {{ cour.libelle }}
+        {{ cour.nomenclature }}
+    </li>
+    
+<ul class="heroes">
+    <li *ngFor="let cour of valueRetour" (click)="onSelect(cour)">
+        <span class="badge">{{cour.id}}</span> {{ cour.libelle }}{{ cour.nomenclature }}
+    </li>
+</ul>
+
+<div *ngIf="selectedCours">
+
+   
+    <h2>{{selectedCours.libelle | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedCours.id}}</div>
+    <div><span>libelle: </span>{{selectedCours.libelle}}</div>
+    <div><span>nomenclature: </span>{{selectedCours.nomenclature}}</div>
+
+    
+
+</div>
