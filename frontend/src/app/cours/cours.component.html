@@ -1,6 +1,7 @@
 <h1>Cours</h1>
 
 <br>
+<div *ngIf=" !detail">
 <table>
     <tr>
         <td>Libelle</td>
@@ -18,10 +19,10 @@
         <span class="badge">{{cour.id}}</span> {{ cour.libelle }}{{ cour.nomenclature }}
     </li>
 </ul>
+</div>
+<div *ngIf="selectedCours && detail">
 
-<div *ngIf="selectedCours">
-
-   
+    <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
     <h2>{{selectedCours.libelle | uppercase}} Details</h2>
     <div><span>id: </span>{{selectedCours.id}}</div>
     <div><span>libelle: </span>{{selectedCours.libelle}}</div>

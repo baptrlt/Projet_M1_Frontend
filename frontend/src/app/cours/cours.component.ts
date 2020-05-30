@@ -13,6 +13,7 @@ export class CoursComponent {
   constructor(private http: HttpClient) { }
   valueRetour: any;
   selectedCours: Cours;
+  detail: boolean = false;
 
   ngAfterViewInit(): void {
     this.doGET();
@@ -38,6 +39,12 @@ export class CoursComponent {
 
   onSelect(cour: Cours): void {
     this.selectedCours = cour;
+    this.detail = !this.detail;
   }
+
+  backToCours(){
+    this.detail = !this.detail;
+  }
+
 }
 
