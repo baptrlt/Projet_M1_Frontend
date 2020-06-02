@@ -73,7 +73,35 @@
     <div><span>cycle: </span>{{selectedCours.Cycle.libelle}}</div>
     <div><span>enseignants: </span><div>{{selectedCours.Enseignants | json}}</div></div>
 
+</div>
 
-    
+<div class="container"><br />
+
+    <div class="form-group">
+        <strong>Periode</strong>
+        <select class="form-control" [(ngModel)]="periode">
+            <option></option>
+            <option value="Semestre 1">Semestre 1</option>
+            <option value="Semestre 4">Semestre 4</option>
+        </select>
+    </div>
+
+    <br /><br />
+
+
+    <table class="table table-bordered table-dark">
+        <thead>
+            <th>Name</th>
+            <th>Semestre</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let cour of valueRetour | periode: periode">
+                <td>{{ cour.libelle }}</td>
+                <td>{{ cour.periode.libelle }}</td>
+            </tr>
+        </tbody>
+
+    </table>
 
 </div>
