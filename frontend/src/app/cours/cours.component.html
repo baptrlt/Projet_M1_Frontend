@@ -25,9 +25,9 @@
             <th>Semestre 10</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody> 
         <td >
-            <tr *ngFor="let cour of valueRetour | semestre1: 'semestre 1'">{{ cour.libelle }}</tr>
+            <tr *ngFor="let cour of valueRetour | semestre1: 'semestre 1'"><li (click)="onSelect(cour)">{{ cour.libelle }}</li></tr>
         </td>
     <!-- <td>
             <tr *ngFor="let cour of valueRetour | semestre2: 'semestre 2'" >{{ cour.libelle }}</tr>
@@ -67,7 +67,6 @@
                 <td >{{ cour.libelle }}</td>
             </tr>
         </td>-->
-        
     </tbody>
 </table>
 
@@ -95,13 +94,33 @@
 <div *ngIf="selectedCours && detail">
 
     <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
-    <h2>{{selectedCours.libelle | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedCours.id}}</div>
-    <div><span>libelle: </span>{{selectedCours.libelle}}</div>
-    <div><span>nomenclature: </span>{{selectedCours.nomenclature}}</div>
-    <div><span>cycle: </span>{{selectedCours.Cycle.libelle}}</div>
-    <div><span>enseignants: </span><div>{{selectedCours.Enseignants | json}}</div></div>
 
+    <table class="table table-bordered table-dark">
+        <thead>
+                {{selectedCours.libelle | uppercase}} Details
+        
+        </thead>
+        <tbody>
+            <tr>
+                <th>id</th>
+                <td>{{selectedCours.id}}</td>
+            </tr>
+            <tr>
+                <th>libelle </th>
+                <td>{{selectedCours.libelle}}</td>
+            <tr>
+                <th>nomenclature</th>
+                <td>{{selectedCours.nomenclature}}</td>
+            <tr>
+                <th>cycle</th>
+                <td>{{selectedCours.Cycle.libelle}}</td>
+            <tr>
+                <th>enseignants</th>
+                <td>{{selectedCours.Enseignants | json}}</td>
+        </tbody>
+    </table>
+   
+    
 </div>
 <!--
 <div class="container"><br />
