@@ -3,105 +3,158 @@
 <br>
 <div *ngIf=" !detail">
 
-<table class="table table-bordered table-dark">
-    <thead>
-        <tr>
-            <th colspan="2">Année 1</th>
-            <th colspan="2">Année 2</th>
-            <th colspan="2">Année 3</th>
-            <th colspan="2">Année 4</th>
-            <th colspan="2">Année 5</th>
-        </tr>
-        <tr>
-            <th>Semestre 1</th>
-            <th>Semestre 2</th>
-            <th>Semestre 3</th>
-            <th>Semestre 4</th>
-            <th>Semestre 5</th>
-            <th>Semestre 6</th>
-            <th>Semestre 7</th>
-            <th>Semestre 8</th>
-            <th>Semestre 9</th>
-            <th>Semestre 10</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td >
-            <tr *ngFor="let cour of valueRetour">{{ cour.libelle }}</tr>
-        </td>
-        <td>
-            <tr *ngFor="let cour of valueRetour">{{ cour.libelle }}</tr>
-        </td>
-        <td>
-            <tr *ngFor="let cour of valueRetour">
-                <td>{{ cour.libelle }}</td>
-            </tr>
-        </td>
-        <td>
-            <tr *ngFor="let cour of valueRetour">
-                <td>{{ cour.libelle }}</td>
-            </tr>
-        </td>
-        
-    </tbody>
-</table>
-<table>
-    <tr>
-        <td>Libelle</td>
-        <td>Nomenclature</td>
-    </tr>
-</table>
-
-   <li *ngFor="let cour of valueRetour" (click)="onSelect(cour)">
-        {{ cour.libelle }}
-        {{ cour.nomenclature }}
-    </li>
+    <div class="container"><br />
     
-<ul class="cours">
-    <li *ngFor="let cour of valueRetour" (click)="onSelect(cour)">
-        <span class="badge">{{cour.id}}</span> {{ cour.libelle }}{{ cour.nomenclature }}{{ cour.periode.libelle }}
-    </li>
-</ul>
-</div>
-<div *ngIf="selectedCours && detail">
-
-    <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
-    <h2>{{selectedCours.libelle | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedCours.id}}</div>
-    <div><span>libelle: </span>{{selectedCours.libelle}}</div>
-    <div><span>nomenclature: </span>{{selectedCours.nomenclature}}</div>
-    <div><span>cycle: </span>{{selectedCours.Cycle.libelle}}</div>
-    <div><span>enseignants: </span><div>{{selectedCours.Enseignants | json}}</div></div>
-
-</div>
-
-<div class="container"><br />
-
     <div class="form-group">
         <strong>Cycles</strong>
         <select class="form-control" [(ngModel)]="Cycle">
             <option></option>
-            <option value="cycle 1">Cycle 1</option>
-            <option value="cycle 2">Cycle 2</option>
+            <option *ngFor="let cycle of listCycle" [ngValue]="cycle.libelle">{{ cycle.libelle }}</option>
         </select>
     </div>
-
+    
+    <!--tableau test-->
+    <!--
     <br /><br />
-
-
+    
+    
     <table class="table table-bordered table-dark">
         <thead>
             <th>Name</th>
             <th>Semestre</th>
         </thead>
-
+    
         <tbody>
-            <tr *ngFor="let cour of valueRetour | periode: Cycle">
+            <tr *ngFor="let cour of valueRetour | cycle: Cycle">
                 <td>{{ cour.libelle }}</td>
-                <td>{{ cour.periode.libelle }}</td>
+                <td>{{ cour.Cycle.libelle }}</td>
             </tr>
         </tbody>
+    
+    </table>-->
+    
+    </div>
 
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th colspan="2">Année 1</th>
+                <th colspan="2">Année 2</th>
+                <th colspan="2">Année 3</th>
+                <th colspan="2">Année 4</th>
+                <th colspan="2">Année 5</th>
+            </tr>
+            <tr>
+                <th>Semestre 1</th>
+                <th>Semestre 2</th>
+                <th>Semestre 3</th>
+                <th>Semestre 4</th>
+                <th>Semestre 5</th>
+                <th>Semestre 6</th>
+                <th>Semestre 7</th>
+                <th>Semestre 8</th>
+                <th>Semestre 9</th>
+                <th>Semestre 10</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 1'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 2'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 3'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 4'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 5'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 6'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 7'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 8'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 9'" (click)="onSelect(cour)">{{ cour.libelle }}</div>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
+                    <div *ngIf="cour.periode.libelle === 'semestre 10'" (click)="onSelect(cour)">{{ cour.libelle }}
+                    </div>
+                </tr>
+            </td>
+            <!--
+        
+        <td>
+            <tr *ngFor="let cour of valueRetour">
+                <td>{{ cour.libelle }}</td>
+            </tr>
+        </td>
+        <td >
+            <tr *ngFor="let cour of valueRetour | semestre1: 'semestre 4'">
+                <td >{{ cour.libelle }}</td>
+            </tr>
+        </td>-->
+        </tbody>
     </table>
+</div>
+
+<!---------------------------------------------------------------------------------------------------------->
+
+<div *ngIf="selectedCours && detail">
+
+    <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
+
+    <table class="table table-bordered table-dark">
+        <thead>
+            {{selectedCours.libelle | uppercase}} Details
+
+        </thead>
+        <tbody>
+            <tr>
+                <th>id</th>
+                <td>{{selectedCours.id}}</td>
+            </tr>
+            <tr>
+                <th>libelle </th>
+                <td>{{selectedCours.libelle}}</td>
+            <tr>
+                <th>nomenclature</th>
+                <td>{{selectedCours.nomenclature}}</td>
+            <tr>
+                <th>cycle</th>
+                <td>{{selectedCours.Cycle.libelle}}</td>
+            <tr>
+                <th>enseignants</th>
+                <td>{{selectedCours.Enseignants | json}}</td>
+        </tbody>
+    </table>
+
 
 </div>

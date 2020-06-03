@@ -12,16 +12,18 @@ export class CoursComponent {
 
   constructor(private http: HttpClient) { }
   valueRetour: any;
+  listCycle: any;
   selectedCours: Cours;
   detail: boolean = false;
   Cycle: string;
 
   ngAfterViewInit(): void {
-    this.doGET();
+    this.getCours();
+    this.getCycle();
   }
 
 
-  doGET() {
+  getCours() {
     console.log("GET");
     let url = `http://51.38.191.75:80/api/cours/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
@@ -30,6 +32,23 @@ export class CoursComponent {
       .subscribe(
         (response) => {
           this.valueRetour = response;
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+
+  }
+
+  getCycle() {
+    console.log("GET");
+    let url = `http://51.38.191.75:80/api/cycle/liste`;
+    //this.http.get(url).subscribe(res => console.log(res.json()));
+    this.http
+      .get<any[]>(url)
+      .subscribe(
+        (response) => {
+          this.listCycle = response;
         },
         (error) => {
           console.log('Erreur ! : ' + error);

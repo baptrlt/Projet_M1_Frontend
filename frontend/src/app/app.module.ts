@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CoursComponent } from './cours/cours.component';
 import { EnseignementComponent } from './enseignement/enseignement.component';
 import { CoursDetailComponent } from './cours-detail/cours-detail.component';
-import { PeriodePipe } from './periode.pipe';
+import { CyclePipe } from './cycle.pipe';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { PeriodePipe } from './periode.pipe';
     CoursComponent,
     EnseignementComponent,
     CoursDetailComponent,
-    PeriodePipe
+    CyclePipe
   ],
   imports: [
     BrowserModule,
