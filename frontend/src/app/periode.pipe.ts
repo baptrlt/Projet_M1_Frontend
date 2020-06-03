@@ -5,10 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PeriodePipe implements PipeTransform {
 
-  transform(list: any[], value: string) {
+  transform(list: any[], periode: string) {
 
-
-    return value ? list.filter(item => item.periode.libelle === value) : list;
+    return periode ? list.filter(item => item.periode.libelle === "periode" ) : list;
+  
   }
 
 }
