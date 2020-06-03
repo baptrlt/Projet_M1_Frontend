@@ -1,7 +1,14 @@
 <h1>Cours</h1>
 
 <br>
-<div *ngIf=" !detail">
+<div *ngIf="showSpinner">
+<button class="btn btn-danger" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Chargement...
+</button>
+</div>
+
+<div *ngIf=" !detail && !showSpinner">
 
     <div class="container"><br />
     
@@ -137,22 +144,54 @@
 
         </thead>
         <tbody>
-            <tr>
+            <!--<tr>
                 <th>id</th>
                 <td>{{selectedCours.id}}</td>
-            </tr>
+            </tr>-->
             <tr>
                 <th>libelle </th>
                 <td>{{selectedCours.libelle}}</td>
+            </tr>
             <tr>
                 <th>nomenclature</th>
                 <td>{{selectedCours.nomenclature}}</td>
+            </tr>
             <tr>
-                <th>cycle</th>
-                <td>{{selectedCours.Cycle.libelle}}</td>
+                <th>description</th>
+                <td>{{selectedCours.description}}</td>
+            </tr>
+            <tr>
+                <th>syllabus objectif</th>
+                <td>{{selectedCours.syllabusObjectif}}</td>
+            </tr>
+            <tr>
+                <th>syllabus reference</th>
+                <td>{{selectedCours.syllabusReference}}</td>
+            </tr>
+            <tr>
+                <th>periode</th>
+                <td>{{selectedCours.periode.libelle}}</td>
+            </tr>
+            <tr>
+                <th>referent</th>
+                <td>{{selectedCours.Referent.nom}}</td>
+            </tr>
             <tr>
                 <th>enseignants</th>
                 <td>{{selectedCours.Enseignants | json}}</td>
+            </tr>
+            <tr>
+                <th>type d'évaluation</th>
+                <td>{{selectedCours.TypeEvaluation.libelle}}</td>
+            </tr>
+            <tr>
+                <th>prerequis</th>
+                <td>{{selectedCours.Prerequis.libelle | json}}</td>
+            </tr>
+            <tr>
+                <th>pi espaces</th>
+                <td>{{selectedCours.PiEspaces.libelle}}</td>
+            </tr>
         </tbody>
     </table>
 

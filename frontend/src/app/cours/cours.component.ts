@@ -11,6 +11,7 @@ import { Cours} from '../cours/cours';
 export class CoursComponent {
 
   constructor(private http: HttpClient) { }
+  showSpinner: boolean = true;
   valueRetour: any;
   listCycle: any;
   selectedCours: Cours;
@@ -32,7 +33,9 @@ export class CoursComponent {
       .subscribe(
         (response) => {
           this.valueRetour = response;
+          this.showSpinner = false;
         },
+        
         (error) => {
           console.log('Erreur ! : ' + error);
         }
