@@ -38,6 +38,11 @@ export class CoursComponent {
 
   }
 
+  getPeriode(periode: string): Cours {
+    return this.valueRetour.find(cour => cour.periode.libelle === periode);
+  }
+  
+
   onSelect(cour: Cours): void {
     this.selectedCours = cour;
     this.detail = !this.detail;
