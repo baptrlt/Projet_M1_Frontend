@@ -78,11 +78,11 @@
 <div class="container"><br />
 
     <div class="form-group">
-        <strong>Periode</strong>
-        <select class="form-control" [(ngModel)]="periode">
+        <strong>Cycles</strong>
+        <select class="form-control" [(ngModel)]="Cycle">
             <option></option>
-            <option value="Semestre 1">Semestre 1</option>
-            <option value="Semestre 4">Semestre 4</option>
+            <option value="cycle 1">Cycle 1</option>
+            <option value="cycle 2">Cycle 2</option>
         </select>
     </div>
 
@@ -96,7 +96,7 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let cour of valueRetour | periode: periode">
+            <tr *ngFor="let cour of valueRetour | periode: Cycle">
                 <td>{{ cour.libelle }}</td>
                 <td>{{ cour.periode.libelle }}</td>
             </tr>

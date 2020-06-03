@@ -8,7 +8,7 @@ export class PeriodePipe implements PipeTransform {
   transform(list: any[], value: string) {
 
 
-    return value ? list.filter(item => item.periode.libelle === value) : list;
+    return value ? list.filter(item => item.Cycle.libelle === value) : list;
   }
 
 }

@@ -14,7 +14,7 @@ export class CoursComponent {
   valueRetour: any;
   selectedCours: Cours;
   detail: boolean = false;
-  periode: string;
+  Cycle: string;
 
   ngAfterViewInit(): void {
     this.doGET();
