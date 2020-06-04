@@ -14,6 +14,7 @@ export class CoursComponent {
   showSpinner: boolean = true;
   valueRetour: any;
   listCycle: any;
+  listPeriode: any;
   selectedCours: Cours;
   detail: boolean = false;
   Cycle: string;
@@ -21,6 +22,7 @@ export class CoursComponent {
   ngAfterViewInit(): void {
     this.getCours();
     this.getCycle();
+    this.getPeriode();
   }
 
 
@@ -59,6 +61,25 @@ export class CoursComponent {
       );
 
   }
+
+  getPeriode() {
+    console.log("GET");
+    let url = `http://51.38.191.75:80/api/axe_temps/liste`;
+    //this.http.get(url).subscribe(res => console.log(res.json()));
+    this.http
+      .get<any[]>(url)
+      .subscribe(
+        (response) => {
+          this.listPeriode = response;
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+
+  }
+
+
 
   onSelect(cour: Cours): void {
     this.selectedCours = cour;
