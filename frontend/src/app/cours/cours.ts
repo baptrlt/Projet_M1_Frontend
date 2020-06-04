@@ -6,7 +6,8 @@ export interface Cours {
     syllabusObjectif: string;
     syllabusReference: string;
     Cycle: {libelle: string;}
-    periode: {libelle: string;}
+    periode: {libelle: string;
+              numeroSemestre: number;}
     Referent: { nom: string; }
     Enseignants: {nom: string;}
     TypeEvaluation: {libelle: string; }
