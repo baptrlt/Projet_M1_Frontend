@@ -12,5 +12,6 @@ export interface Cours {
     Enseignants: {nom: string;}
     TypeEvaluation: {libelle: string; }
     Prerequis: { libelle: string;}
-    PiEspaces: { libelle: string;}
+    PiEspaces: { libelle: string;
+                 nomenclature: string;}
 }

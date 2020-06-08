@@ -90,5 +90,7 @@ export class CoursComponent {
     this.detail = !this.detail;
   }
 
+ 
+
 }
 

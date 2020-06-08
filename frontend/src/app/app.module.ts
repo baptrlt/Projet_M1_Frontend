@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EnseignantComponent } from './enseignant/enseignant.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MglTimelineModule } from 'angular-mgl-timeline';
 
 import { CoursComponent } from './cours/cours.component';
 import { EnseignementComponent } from './enseignement/enseignement.component';
@@ -29,6 +31,8 @@ import { CyclePipe } from './cycle.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MglTimelineModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
