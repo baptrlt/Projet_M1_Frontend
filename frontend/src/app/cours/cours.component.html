@@ -1,4 +1,4 @@
-<h1>Cours</h1>
+<h1 class="title">Liste des cours</h1>
 
 <br>
 <div *ngIf="showSpinner" class="spinner">
@@ -13,7 +13,7 @@
     <div class="container-choice-libelle"><br />
     
     <div class="form-group">
-        <strong>Cycles</strong>
+        <h2>Choix du cycle : {{Cycle}}</h2>
         <select class="form-control" [(ngModel)]="Cycle">
             <option></option>
             <option *ngFor="let cycle of listCycle" [ngValue]="cycle.libelle" [ngStyle]="{color: cycle.couleur}">{{ cycle.libelle }}</option>
