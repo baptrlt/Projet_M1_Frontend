@@ -20,9 +20,9 @@ export class CoursComponent {
   Cycle: string;
 
   ngAfterViewInit(): void {
-    this.getCours();
     this.getCycle();
     this.getPeriode();
+    this.getCours();
   }
 
 
