@@ -1,3 +1,7 @@
+$danger: #d30c15;
+
+@import "bootstrap";
+
 // ----------------  THE BASICS
 
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
@@ -72,6 +76,8 @@ $border-color: rgba(white, .3);
 		border: 2px solid $border-color;
 		background: white;
 	}
+
+	 .btn-danger {background-color: #d30c15;}
 
 	
 }
