@@ -13,7 +13,7 @@
     <div class="container-choice-libelle"><br />
     
     <div class="form-group">
-        <strong>Cycles</strong>
+        <strong >{{Cycle}}</strong>
         <select class="form-control" [(ngModel)]="Cycle">
             <option></option>
             <option *ngFor="let cycle of listCycle" [ngValue]="cycle.libelle" [ngStyle]="{color: cycle.couleur}">{{ cycle.libelle }}</option>
@@ -142,8 +142,8 @@
             <div *ngFor="let cour of valueRetour | cycle: Cycle">
                 <span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-html="true" title="{{cour.description}} 
                 Référent : {{cour.Referent.nom}}">
-                <div *ngIf="cour.periode.numeroSemestre === periode.numeroSemestre" (click)="onSelect(cour)" [ngStyle]="{color: cour.Cycle.couleur}">
-                    {{ cour.libelle }}
+                <div *ngIf="cour.periode.numeroSemestre === periode.numeroSemestre" (click)="onSelect(cour)" >
+                    <div [ngStyle]="{'background-color': cour.Cycle.couleur}" class="card">{{ cour.libelle }}</div>
                 </div>
                 </span>
             </div>
