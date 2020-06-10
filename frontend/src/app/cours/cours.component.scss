@@ -1,3 +1,15 @@
+
+
+// ----------------  THE BASICS
+
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
+
+.container-choice-libelle{
+	position: fixed;
+	margin-left: 2%;
+	margin-top: 5%;
+}
+
 .title{
 	text-align: center;
     position: fixed;
@@ -11,14 +23,6 @@
     width: 60%;
     margin-left: 20%;
     margin-top: 10%;
-}
-
-// ----------------  THE BASICS
-
-@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
-
-.container-choice-libelle{
-    position: fixed;
 }
 
 body {
@@ -43,6 +47,11 @@ p {
 }
 
 // ----------------  LAYOUT
+
+
+.timeline{
+    margin-top: 5%;
+}
 
 .container {
 	max-width: 1024px;
