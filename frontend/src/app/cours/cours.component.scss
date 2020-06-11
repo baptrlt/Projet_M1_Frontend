@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap');
 @import "bootstrap";
 
 $danger:#d30c15;
@@ -64,7 +65,12 @@ body {
 
 // ---------------- FONTS
 
-h1, h2, h3, h4, h5, h6 {
+h1{
+	font-family: 'Muli', sans-serif;
+
+}
+
+h2, h3, h4, h5, h6 {
 	font-family: 'Oswald', sans-serif;
 }
 
