@@ -26,6 +26,16 @@ $danger:#d30c15;
 	z-index: 10;
 }
 
+.title-details{
+	text-align: center;
+    position: fixed;
+    width: 40%;
+	margin-left: 30%;
+	background-color:#d30c15;
+	border-radius: 5px;
+	z-index: 9;
+}
+
 .btn{
 	background-color:#d30c15;
 	color: white;
@@ -114,4 +124,5 @@ $border-color: rgba(white, .3);
 	}
 
 // ----------------  DETAILS	
+	
 }
