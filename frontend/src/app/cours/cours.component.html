@@ -15,7 +15,7 @@
     <div class="container-choice-libelle"><br />
     
     <div class="form-group">
-        <h2>Choix du cycle : {{Cycle}}</h2>
+        <h2 class="cycle-title">Choix du cycle : {{Cycle}}</h2>
         <select class="form-control" [(ngModel)]="Cycle">
             <option></option>
             <option *ngFor="let cycle of listCycle" [ngValue]="cycle.libelle" [ngStyle]="{color: cycle.couleur}">{{ cycle.libelle }}</option>
