@@ -1,8 +1,7 @@
-
-
-// ----------------  THE BASICS
-
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
+@import "bootstrap";
+
+$danger:#d30c15;
 
 .container-choice-libelle{
 	position: fixed;
@@ -12,7 +11,7 @@
 }
 
 .cycle-title{
-	background-color: red;
+	background-color:#d30c15;
 }
 
 .title{
@@ -20,8 +19,13 @@
     position: fixed;
     width: 60%;
 	margin-left: 20%;
-	background-color:red;
+	background-color:#d30c15;
 	z-index: 10;
+}
+
+.btn{
+	background-color:#d30c15;
+	color: white;
 }
 
 .spinner{
