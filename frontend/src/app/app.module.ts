@@ -15,6 +15,7 @@ import { EnseignementComponent } from './enseignement/enseignement.component';
 import { CoursDetailComponent } from './cours-detail/cours-detail.component';
 import { CyclePipe } from './cycle.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CoursComponent,
     EnseignementComponent,
     CoursDetailComponent,
-    CyclePipe
+    CyclePipe,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
