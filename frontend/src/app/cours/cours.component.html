@@ -49,72 +49,74 @@
     </div>
     </div>
 </div>
-<!---------------------------------------------------------------------------------------------------------->
+<!------//FIN CODE TIMELINE----------------------------------------------------------------------->
+<!------//CODE TABLEAU DETAILS-------------------------------------------------------------------->
 
 <div *ngIf="selectedCours && detail">
 
     <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
 
     <div class="titre">
-        <h1 class="title">{{selectedCours.libelle | uppercase}} Details</h1>
+        <h1 class="title">Details {{selectedCours.libelle}}</h1>
     </div>
 
-    <table class="table table-bordered table-dark">
-        <thead>
-            {{selectedCours.libelle | uppercase}} Details
+    <div class="details">
+        <table class="table table-bordered table-dark" style="width:70%; margin:auto; margin-top: 3%;">
+            <!--<thead>
+                {{selectedCours.libelle | uppercase}} Details
 
-        </thead>
-        <tbody>
-            <!--<tr>
-                <th>id</th>
-                <td>{{selectedCours.id}}</td>
-            </tr>-->
-            <tr>
-                <th>libelle </th>
-                <td>{{selectedCours.libelle}}</td>
-            </tr>
-            <tr>
-                <th>nomenclature</th>
-                <td>{{selectedCours.nomenclature}}</td>
-            </tr>
-            <tr>
-                <th>description</th>
-                <td>{{selectedCours.description}}</td>
-            </tr>
-            <tr>
-                <th>syllabus objectif</th>
-                <td>{{selectedCours.syllabusObjectif}}</td>
-            </tr>
-            <tr>
-                <th>syllabus reference</th>
-                <td>{{selectedCours.syllabusReference}}</td>
-            </tr>
-            <tr>
-                <th>periode</th>
-                <td>{{selectedCours.periode.libelle}}</td>
-            </tr>
-            <tr>
-                <th>referent</th>
-                <td>{{selectedCours.Referent.nom}}</td>
-            </tr>
-            <tr>
-                <th>enseignants</th>
-                <td>{{selectedCours.Enseignants | json}}</td>
-            </tr>
-            <tr>
-                <th>type d'évaluation</th>
-                <td>{{selectedCours.TypeEvaluation.libelle}}</td>
-            </tr>
-            <tr>
-                <th>prerequis</th>
-                <td>{{selectedCours.Prerequis | json}}</td>
-            </tr>
-            <tr>
-                <th>pi espaces</th>
-                <td>{{selectedCours.PiEspaces | json}}</td>
-            </tr>
-        </tbody>
-    </table>
-
+            </thead>-->
+            <tbody>
+                <!--<tr>
+                    <th>id</th>
+                    <td>{{selectedCours.id}}</td>
+                </tr>-->
+                <tr>
+                    <th>libelle </th>
+                    <td>{{selectedCours.libelle}}</td>
+                </tr>
+                <tr>
+                    <th>nomenclature</th>
+                    <td>{{selectedCours.nomenclature}}</td>
+                </tr>
+                <tr>
+                    <th>description</th>
+                    <td>{{selectedCours.description}}</td>
+                </tr>
+                <tr>
+                    <th>syllabus objectif</th>
+                    <td>{{selectedCours.syllabusObjectif}}</td>
+                </tr>
+                <tr>
+                    <th>syllabus reference</th>
+                    <td>{{selectedCours.syllabusReference}}</td>
+                </tr>
+                <tr>
+                    <th>periode</th>
+                    <td>{{selectedCours.periode.libelle}}</td>
+                </tr>
+                <tr>
+                    <th>referent</th>
+                    <td>{{selectedCours.Referent.nom}}</td>
+                </tr>
+                <tr>
+                    <th>enseignants</th>
+                    <td>{{selectedCours.Enseignants | json}}</td>
+                </tr>
+                <tr>
+                    <th>type d'évaluation</th>
+                    <td>{{selectedCours.TypeEvaluation.libelle}}</td>
+                </tr>
+                <tr>
+                    <th>prerequis</th>
+                    <td>{{selectedCours.Prerequis | json}}</td>
+                </tr>
+                <tr>
+                    <th>pi espaces</th>
+                    <td>{{selectedCours.PiEspaces | json}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
