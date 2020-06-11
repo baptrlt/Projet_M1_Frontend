@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cours} from '../cours/cours';
+import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cours',
@@ -10,7 +11,11 @@ import { Cours} from '../cours/cours';
 @Injectable()
 export class CoursComponent {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, config: NgbPopoverConfig) {
+    config.placement = 'right';
+    config.triggers = 'hover';
+   }
+   
   showSpinner: boolean = true;
   valueRetour: any;
   listCycle: any;
@@ -20,8 +25,9 @@ export class CoursComponent {
   Cycle: string;
 
   ngAfterViewInit(): void {
-    this.getCycle();
+    
     this.getPeriode();
+    this.getCycle();
     this.getCours();
   }
 

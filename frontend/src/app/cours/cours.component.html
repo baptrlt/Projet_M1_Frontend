@@ -1,220 +1,127 @@
-<h1>Cours</h1>
+<div *ngIf="showSpinner" class="spinner">
 
-<br>
-<div *ngIf="showSpinner">
-<button class="btn btn-danger" type="button" disabled>
+<button class="btn" type="button">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     Chargement...
 </button>
 </div>
 
 <div *ngIf=" !detail && !showSpinner">
+<br>
+
+
+    <h1 class="title">Liste des cours</h1>
+
+<br>
 
     <div class="container-choice-libelle"><br />
     
     <div class="form-group">
-        <strong >{{Cycle}}</strong>
+        <h2 class="cycle-title">Choix du cycle : {{Cycle}}</h2>
         <select class="form-control" [(ngModel)]="Cycle">
             <option></option>
             <option *ngFor="let cycle of listCycle" [ngValue]="cycle.libelle" [ngStyle]="{color: cycle.couleur}">{{ cycle.libelle }}</option>
         </select>
     </div>
-    
-    <!--tableau test-->
-    <!--
-    <br /><br />
-    
-    
-    <table class="table table-bordered table-dark">
-        <thead>
-            <th>Name</th>
-            <th>Semestre</th>
-        </thead>
-    
-        <tbody>
-            <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                <td>{{ cour.libelle }}</td>
-                <td>{{ cour.Cycle.libelle }}</td>
-            </tr>
-        </tbody>
-    
-    </table>-->
-    
     </div>
-<!--    
-    <div *ngFor="let periode of listPeriode">
-    <table class="table table-bordered table-dark" >
-            <tr>
-                <th colspan="2">Année 1</th>
-                <th colspan="2">Année 2</th>
-                <th colspan="2">Année 3</th>
-                <th colspan="2">Année 4</th>
-                <th colspan="2">Année 5</th>
-            </tr>
-            <tr>
-                <td>Semestre &nbsp;{{ periode.numeroSemestre }}</td>
-            
-                    <div *ngFor="let cour of valueRetour | cycle: Cycle">
-                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-html="true" title="
-                        {{cour.libelle}}
-                        {{cour.description}} 
-                        {{cour.Referent.nom}}">
-                        <div *ngIf="cour.periode.numeroSemestre === periode.numeroSemestre" (click)="onSelect(cour)">
-                            {{ cour.libelle }}
-                        </div>
-                        </span>
-                    </div>
-            </tr>
-           <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 2" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 3" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 4" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 5" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 6" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 7" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 8" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 9" (click)="onSelect(cour)">{{ cour.libelle }}</div>
-                </tr>
-            </td>
-            <td>
-                <tr *ngFor="let cour of valueRetour | cycle: Cycle">
-                    <div *ngIf="cour.periode.numeroSemestre === 10" (click)="onSelect(cour)">{{ cour.libelle }}
-                    </div>
-                </tr>
-            </td>
-            
-        
-        <td>
-            <tr *ngFor="let cour of valueRetour">
-                <td>{{ cour.libelle }}</td>
-            </tr>
-        </td>
-        <td >
-            <tr *ngFor="let cour of valueRetour | semestre1: 'semestre 4'">
-                <td >{{ cour.libelle }}</td>
-            </tr>
-        </td>
-    </table>
-    </div>
-
-
- <mgl-timeline *ngFor="let periode of listPeriode">
-        <mgl-timeline-entry side="right">
-            <mgl-timeline-entry-header>Header</mgl-timeline-entry-header>
-            <mgl-timeline-entry-content>Content</mgl-timeline-entry-content>
-            <mgl-timeline-entry-dot  style=" background-color: lightblue; color: darkblue"></mgl-timeline-entry-dot>
-        </mgl-timeline-entry>
-    </mgl-timeline>-->
-     
+    
+   
+<div class="timeline">
     <div class="container" *ngFor="let periode of listPeriode">
     
         <div class="timeline-item" >
-            <h1>Semestre &nbsp;{{ periode.numeroSemestre }}</h1>
+            <h2>Semestre &nbsp;{{ periode.numeroSemestre }}</h2>
             <div *ngFor="let cour of valueRetour | cycle: Cycle">
-                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-html="true" title="{{cour.description}} 
-                Référent : {{cour.Referent.nom}}">
-                <div *ngIf="cour.periode.numeroSemestre === periode.numeroSemestre" (click)="onSelect(cour)" >
-                    <div [ngStyle]="{'background-color': cour.Cycle.couleur}" class="card">{{ cour.libelle }}</div>
+
+                <!--<span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-html="true" title="
+                Référent : {{cour.Referent.nom}}">-->
+
+                <div *ngIf="cour.periode.numeroSemestre === periode.numeroSemestre" (click)="onSelect(cour)">
+                    <div class="card" [ngStyle]="{'background-color': cour.Cycle.couleur}" 
+                     ngbPopover="{{cour.description}} " popoverTitle=" Référent : {{cour.Referent.nom}}">
+                        {{ cour.libelle }}
+                    </div>
                 </div>
-                </span>
+
+            <!--< </span>-->
+
             </div>
         </div>
 
       
     
     </div>
+    </div>
 </div>
-<!---------------------------------------------------------------------------------------------------------->
+<!------//FIN CODE TIMELINE----------------------------------------------------------------------->
+<!------//CODE TABLEAU DETAILS-------------------------------------------------------------------->
 
 <div *ngIf="selectedCours && detail">
 
-    <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
+    <div class="retour">
+    <button type="button" class="btn btn-link" (click)="backToCours()" style="position: fixed; margin-left: 20%;  margin-top: -3%;">
+        Retour</button>
+    </div>
 
-    <table class="table table-bordered table-dark">
-        <thead>
-            {{selectedCours.libelle | uppercase}} Details
+        <h1 class="title-details" style="margin-top: -3%;">Details {{selectedCours.libelle}}</h1>
 
-        </thead>
-        <tbody>
-            <!--<tr>
-                <th>id</th>
-                <td>{{selectedCours.id}}</td>
-            </tr>-->
-            <tr>
-                <th>libelle </th>
-                <td>{{selectedCours.libelle}}</td>
-            </tr>
-            <tr>
-                <th>nomenclature</th>
-                <td>{{selectedCours.nomenclature}}</td>
-            </tr>
-            <tr>
-                <th>description</th>
-                <td>{{selectedCours.description}}</td>
-            </tr>
-            <tr>
-                <th>syllabus objectif</th>
-                <td>{{selectedCours.syllabusObjectif}}</td>
-            </tr>
-            <tr>
-                <th>syllabus reference</th>
-                <td>{{selectedCours.syllabusReference}}</td>
-            </tr>
-            <tr>
-                <th>periode</th>
-                <td>{{selectedCours.periode.libelle}}</td>
-            </tr>
-            <tr>
-                <th>referent</th>
-                <td>{{selectedCours.Referent.nom}}</td>
-            </tr>
-            <tr>
-                <th>enseignants</th>
-                <td>{{selectedCours.Enseignants | json}}</td>
-            </tr>
-            <tr>
-                <th>type d'évaluation</th>
-                <td>{{selectedCours.TypeEvaluation.libelle}}</td>
-            </tr>
-            <tr>
-                <th>prerequis</th>
-                <td>{{selectedCours.Prerequis | json}}</td>
-            </tr>
-            <tr>
-                <th>pi espaces</th>
-                <td>{{selectedCours.PiEspaces | json}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="details">
+        <table class="table table-bordered table-dark" style="width:70%; margin:auto; margin-top: 5%; ">
+            <!--<thead>
+                {{selectedCours.libelle | uppercase}} Details
 
+            </thead>-->
+            <tbody>
+                <!--<tr>
+                    <th>id</th>
+                    <td>{{selectedCours.id}}</td>
+                </tr>-->
+                <tr>
+                    <th>libelle </th>
+                    <td>{{selectedCours.libelle}}</td>
+                </tr>
+                <tr>
+                    <th>nomenclature</th>
+                    <td>{{selectedCours.nomenclature}}</td>
+                </tr>
+                <tr>
+                    <th>description</th>
+                    <td>{{selectedCours.description}}</td>
+                </tr>
+                <tr>
+                    <th>syllabus objectif</th>
+                    <td>{{selectedCours.syllabusObjectif}}</td>
+                </tr>
+                <tr>
+                    <th>syllabus reference</th>
+                    <td>{{selectedCours.syllabusReference}}</td>
+                </tr>
+                <tr>
+                    <th>periode</th>
+                    <td>{{selectedCours.periode.libelle}}</td>
+                </tr>
+                <tr>
+                    <th>referent</th>
+                    <td>{{selectedCours.Referent.nom}}</td>
+                </tr>
+                <tr>
+                    <th>enseignants</th>
+                    <td>{{selectedCours.Enseignants | json}}</td>
+                </tr>
+                <tr>
+                    <th>type d'évaluation</th>
+                    <td>{{selectedCours.TypeEvaluation.libelle}}</td>
+                </tr>
+                <tr>
+                    <th>prerequis</th>
+                    <td>{{selectedCours.Prerequis | json}}</td>
+                </tr>
+                <tr>
+                    <th>pi espaces</th>
+                    <td>{{selectedCours.PiEspaces | json}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>

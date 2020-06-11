@@ -1,13 +1,60 @@
-$danger: #d30c15;
-
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
 @import "bootstrap";
 
-// ----------------  THE BASICS
-
-@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
+$danger:#d30c15;
 
 .container-choice-libelle{
+	position: fixed;
+	margin-left: 2%;
+	margin-top: 5%;
+
+}
+
+.cycle-title{
+	background-color:#d30c15;
+	border-radius: 5px;
+	color: white;
+}
+
+
+.title{
+	text-align: center;
     position: fixed;
+    width: 40%;
+	margin-left: 30%;
+	background-color:#d30c15;
+	border-radius: 5px;
+	z-index: 10;
+	color: white;
+}
+
+.title-details{
+	text-align: center;
+    position: fixed;
+    width: 40%;
+	margin-left: 30%;
+	background-color:#d30c15;
+	border-radius: 5px;
+	z-index: 9;
+	color: white;
+}
+
+.btn{
+	background-color:#d30c15;
+	color: white;
+}
+
+.spinner{
+	text-align: center;
+    position: fixed;
+    width: 60%;
+    margin-left: 20%;
+	margin-top: 10%;
+	
+}
+
+.form-control{
+	width: 150px;
 }
 
 body {
@@ -15,23 +62,29 @@ body {
 	line-height: 1.5;
 }
 
-// ----------------  THE FONTS
+// ---------------- FONTS
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Oswald', sans-serif;
 }
 
-h1 {
+h2 {
 	font-size: 2rem;
 	margin-bottom: .5em;
+	color: white;
 }
 
-p {
-	font-family: 'Roboto', sans-serif;
-	font-size: .8rem;
-}
 
 // ----------------  LAYOUT
+
+
+.timeline{
+	margin-top: 3%;
+	background-color:rgb(43, 43, 43, 0.7);
+	width: 60%;
+	margin-left: 20%;
+	border-radius: 5px;
+}
 
 .container {
 	max-width: 1024px;
@@ -39,7 +92,7 @@ p {
 	margin: 0 auto;
 }
 
-// ----------------  THE FONTS
+// ----------------  FONTS
 
 $border-color: rgba(white, .3);
 
@@ -47,10 +100,12 @@ $border-color: rgba(white, .3);
 	padding: 3em 2em 2em;
 	position: relative;
 	border-left: 2px solid $border-color;
-	
-	p {
-		font-size: 1rem;
-	}
+
+.card{
+	color:white;
+	text-align: center;
+}
+
 	
 	&::before {
 		content: attr(date-is);
@@ -77,7 +132,6 @@ $border-color: rgba(white, .3);
 		background: white;
 	}
 
-	 .btn-danger {background-color: #d30c15;}
-
+// ----------------  DETAILS	
 	
 }
