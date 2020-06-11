@@ -13,6 +13,7 @@ $danger:#d30c15;
 .cycle-title{
 	background-color:#d30c15;
 	border-radius: 5px;
+	color: white;
 }
 
 
@@ -24,6 +25,7 @@ $danger:#d30c15;
 	background-color:#d30c15;
 	border-radius: 5px;
 	z-index: 10;
+	color: white;
 }
 
 .title-details{
@@ -34,6 +36,7 @@ $danger:#d30c15;
 	background-color:#d30c15;
 	border-radius: 5px;
 	z-index: 9;
+	color: white;
 }
 
 .btn{
@@ -65,9 +68,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Oswald', sans-serif;
 }
 
-h1 {
+h2 {
 	font-size: 2rem;
 	margin-bottom: .5em;
+	color: white;
 }
 
 
@@ -96,6 +100,11 @@ $border-color: rgba(white, .3);
 	padding: 3em 2em 2em;
 	position: relative;
 	border-left: 2px solid $border-color;
+
+.card{
+	color:white;
+	text-align: center;
+}
 
 	
 	&::before {

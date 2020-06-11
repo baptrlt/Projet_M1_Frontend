@@ -1,6 +1,6 @@
 <div *ngIf="showSpinner" class="spinner">
 
-<button class="btn" type="button" disabled>
+<button class="btn" type="button">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     Chargement...
 </button>
@@ -30,7 +30,7 @@
     <div class="container" *ngFor="let periode of listPeriode">
     
         <div class="timeline-item" >
-            <h1>Semestre &nbsp;{{ periode.numeroSemestre }}</h1>
+            <h2>Semestre &nbsp;{{ periode.numeroSemestre }}</h2>
             <div *ngFor="let cour of valueRetour | cycle: Cycle">
 
                 <!--<span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-html="true" title="
@@ -44,7 +44,7 @@
                 </div>
 
             <!--< </span>-->
-            
+
             </div>
         </div>
 
