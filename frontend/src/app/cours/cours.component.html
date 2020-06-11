@@ -55,6 +55,10 @@
 
     <button type="button" class="btn btn-link" (click)="backToCours()">Retour</button>
 
+    <div class="titre">
+        <h1 class="title">{{selectedCours.libelle | uppercase}} Details</h1>
+    </div>
+
     <table class="table table-bordered table-dark">
         <thead>
             {{selectedCours.libelle | uppercase}} Details
