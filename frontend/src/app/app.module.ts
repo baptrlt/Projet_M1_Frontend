@@ -14,6 +14,7 @@ import { CoursComponent } from './cours/cours.component';
 import { EnseignementComponent } from './enseignement/enseignement.component';
 import { CoursDetailComponent } from './cours-detail/cours-detail.component';
 import { CyclePipe } from './cycle.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { CyclePipe } from './cycle.pipe';
     FormsModule,
     BrowserAnimationsModule,
     MglTimelineModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
