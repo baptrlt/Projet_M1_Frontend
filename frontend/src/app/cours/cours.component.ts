@@ -34,8 +34,8 @@ export class CoursComponent {
 
   getCours() {
     console.log("GET");
-    let url = `http://51.38.191.75:80/api/cours/liste`;
-    //let url = `http://127.0.0.1:8000/api/cours/liste`;
+    //let url = `http://51.38.191.75:80/api/cours/liste`;
+    let url = `http://127.0.0.1:8000/api/cours/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
@@ -54,8 +54,8 @@ export class CoursComponent {
 
   getCycle() {
     console.log("GET");
-    let url = `http://51.38.191.75:80/api/cycle/liste`;
-    //let url = `http://127.0.0.1:8000/api/cycle/liste`;
+    //let url = `http://51.38.191.75:80/api/cycle/liste`;
+    let url = `http://127.0.0.1:8000/api/cycle/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
@@ -72,8 +72,8 @@ export class CoursComponent {
 
   getPeriode() {
     console.log("GET");
-    let url = `http://51.38.191.75:80/api/axe_temps/liste`;
-    //let url = `http://127.0.0.1:8000/api/axe_temps/liste`;
+    //let url = `http://51.38.191.75:80/api/axe_temps/liste`;
+    let url = `http://127.0.0.1:8000/api/axe_temps/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
@@ -99,7 +99,45 @@ export class CoursComponent {
     this.detail = !this.detail;
   }
 
- 
+ //-----------------
+  title = 'ngSlick';
+
+
+  slides = [342, 453, 846, 855, 234, 564, 744, 243];
+
+  slideConfig = {
+    "slidesToShow": 4,
+    "slidesToScroll": 1,
+    "nextArrow": "<div class='nav-btn next-slide'></div>",
+    "prevArrow": "<div class='nav-btn prev-slide'></div>",
+    "dots": true,
+    "infinite": false
+  };
+
+  addSlide() {
+    this.slides.push(488)
+  }
+
+  removeSlide() {
+    this.slides.length = this.slides.length - 1;
+  }
+
+  slickInit(e) {
+    console.log('slick initialized');
+  }
+
+  breakpoint(e) {
+    console.log('breakpoint');
+  }
+
+  afterChange(e) {
+    console.log('afterChange');
+  }
+
+  beforeChange(e) {
+    console.log('beforeChange');
+  }
+
 
 }
 

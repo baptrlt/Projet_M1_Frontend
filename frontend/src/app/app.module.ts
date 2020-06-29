@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MglTimelineModule } from 'angular-mgl-timeline';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { CoursComponent } from './cours/cours.component';
 import { EnseignementComponent } from './enseignement/enseignement.component';
@@ -37,6 +38,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     BrowserAnimationsModule,
     MglTimelineModule,
     NgbModule,
+    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
