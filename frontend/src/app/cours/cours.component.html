@@ -59,6 +59,7 @@
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
         (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
         <div ngxSlickItem *ngFor="let periode of listPeriode" class="slide">
+            <br>
             <h2>Semestre &nbsp;{{ periode.numeroSemestre }}</h2>
             <div *ngFor="let cour of valueRetour | cycle: Cycle">
     
