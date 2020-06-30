@@ -12,7 +12,7 @@ import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 export class CoursComponent {
 
   constructor(private http: HttpClient, config: NgbPopoverConfig) {
-    config.placement = 'right';
+    config.placement = 'bottom';
     config.triggers = 'hover';
    }
    
@@ -34,8 +34,8 @@ export class CoursComponent {
 
   getCours() {
     console.log("GET");
-    //let url = `http://51.38.191.75:80/api/cours/liste`;
-    let url = `http://127.0.0.1:8000/api/cours/liste`;
+    let url = `http://51.38.191.75:80/api/cours/liste`;
+    //let url = `http://127.0.0.1:8000/api/cours/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
@@ -54,8 +54,8 @@ export class CoursComponent {
 
   getCycle() {
     console.log("GET");
-    //let url = `http://51.38.191.75:80/api/cycle/liste`;
-    let url = `http://127.0.0.1:8000/api/cycle/liste`;
+    let url = `http://51.38.191.75:80/api/cycle/liste`;
+    //let url = `http://127.0.0.1:8000/api/cycle/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
@@ -72,8 +72,8 @@ export class CoursComponent {
 
   getPeriode() {
     console.log("GET");
-    //let url = `http://51.38.191.75:80/api/axe_temps/liste`;
-    let url = `http://127.0.0.1:8000/api/axe_temps/liste`;
+    let url = `http://51.38.191.75:80/api/axe_temps/liste`;
+    //let url = `http://127.0.0.1:8000/api/axe_temps/liste`;
     //this.http.get(url).subscribe(res => console.log(res.json()));
     this.http
       .get<any[]>(url)
@@ -114,13 +114,6 @@ export class CoursComponent {
     "infinite": false
   };
 
-  addSlide() {
-    this.slides.push(488)
-  }
-
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
 
   slickInit(e) {
     console.log('slick initialized');
